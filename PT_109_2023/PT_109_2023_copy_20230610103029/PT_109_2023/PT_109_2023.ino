@@ -375,29 +375,29 @@ void gunFire(){
   }
   return;
 }
-//=====================================================================
-//                          MonitorTemp
-//=====================================================================
-float monitorTemp(){
- int tempReading;
- float tempC;
- tempReading = analogRead(1);
- //Serial.print("mV  ");
- //Serial.println(tempReading);
- //delay(1000);
- //tempC = tempReading;
- //tempC = 60 * tempReading -32;
- //float tempF =  ((tempC + 40)* (9 / 5) - 40);
- //float mTemp = 1.8 * (tempReading) - 32;   // conversion factor based on expirements with a cup of hot water
-                                           // see Note on p30 of engineering note book
- /*   convert to C using equation from:
-      playground.arduino.cc/Main/LM35HigherResolution
- */
- tempC = (5.0 * tempReading * 100.0)/1024;                                          
- //Serial.print("mTemp  ");
- //Serial.println(mTemp);
- return tempC;
-}
+// //=====================================================================
+// //                          MonitorTemp
+// //=====================================================================
+// float monitorTemp(){
+//  int tempReading;
+//  float tempC;
+//  tempReading = analogRead(1);
+//  //Serial.print("mV  ");
+//  //Serial.println(tempReading);
+//  //delay(1000);
+//  //tempC = tempReading;
+//  //tempC = 60 * tempReading -32;
+//  //float tempF =  ((tempC + 40)* (9 / 5) - 40);
+//  //float mTemp = 1.8 * (tempReading) - 32;   // conversion factor based on expirements with a cup of hot water
+//                                            // see Note on p30 of engineering note book
+//  /*   convert to C using equation from:
+//       playground.arduino.cc/Main/LM35HigherResolution
+//  */
+//  tempC = (5.0 * tempReading * 100.0)/1024;                                          
+//  //Serial.print("mTemp  ");
+//  //Serial.println(mTemp);
+//  return tempC;
+// }
 //= + = + = + = + = + = + = + = + = + = + = + = + = + = + = + = + = + =
 //                          setup
 //= + = + = + = + = + = + = + = + = + = + = + = + = + = + = + = + = + =
@@ -429,21 +429,21 @@ void setup() {
 void loop() {
 // Serial.println("top of loop doop");
 // delay(100);
- float tCent = monitorTemp();
- float temputure = (tCent + 40.0) * (9.0 / 5.0) - 40.0;  // C to F conversion
- if(temputure > 100.0){
- float scaleTemp = round((temputure - 100.0) / 10.0);
- int intScaleTemp = scaleTemp;  // on 28 Aug 2016, the console display was showing temps that were
- //                                20-30 degrees higher than what I think they should have been.
- //                                Perhaps the problem is caused by feeding a FP number to the
- //                                Console function. Added this integer conversion on 28 Aug; 
- //                                if temps still seem high after this, subtract 25 from the 
- //                                float temputure statement above.
- //                                
- console(intScaleTemp);
- }
- //Serial.print("Temp:  ");
- //Serial.println(temputure); 
+//  float tCent = monitorTemp();
+//  float temputure = (tCent + 40.0) * (9.0 / 5.0) - 40.0;  // C to F conversion
+//  if(temputure > 100.0){
+//  float scaleTemp = round((temputure - 100.0) / 10.0);
+//  int intScaleTemp = scaleTemp;  // on 28 Aug 2016, the console display was showing temps that were
+//  //                                20-30 degrees higher than what I think they should have been.
+//  //                                Perhaps the problem is caused by feeding a FP number to the
+//  //                                Console function. Added this integer conversion on 28 Aug; 
+//  //                                if temps still seem high after this, subtract 25 from the 
+//  //                                float temputure statement above.
+//  //                                
+//  console(intScaleTemp);
+//  }
+//  //Serial.print("Temp:  ");
+//  //Serial.println(temputure); 
   int elevpulseWidth = pulseIn(searchlightsignal, HIGH); // reading the pulse width from ELEV channel
   if(elevpulseWidth == 0) elevpulseWidth = 1599;  // set pulsewidth to a neutral switch if zero
 //Serial.print("Channel ELEV:     ");  
