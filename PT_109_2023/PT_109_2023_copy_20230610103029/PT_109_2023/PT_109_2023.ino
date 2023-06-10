@@ -23,7 +23,9 @@
                                       c) lowered gun slew rate interval to 80 msec from 120
       pt109 payload v13: 9 Jun 2023:  a) will put this in to Github for version control
                                       b) remove the console lights and temp monitoring as we will not do that
-                                      c) corrected the variable 'signal' as it is now a keyword                                                                
+                                      c) corrected the variable 'signal' as it is now a keyword
+      PT-109_2023: 10 Jun 2023:       a) got under github version control
+                                      b) demonstrating that I can edit with either version 1 or 2 of the IDE                                    
 */ 
 /* 
 +-+-+-+-+-+-+-+-+-+-+-+-+ 
